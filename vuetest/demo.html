@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <span>{{text}}</span>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            text:'hello world'
+        },
+        beforeCreate:function () {
+            console.log('created before start')
+            console.log(this.text);
+            console.log(this.$el);
+            console.log('created before end')
+        },
+        created:function () {
+            console.log('created start')
+            console.log(this.text);
+            console.log(this.$el);
+            console.log('created end');
+        },
+        beforeMount:function () {
+            console.log('mounted before start');
+            console.log(this.text);
+            console.log(this.$el);
+            console.log('mounted before end');
+        },
+        mounted:function () {
+            console.log('mounted start');
+            console.log(this.text);
+            console.log(this.$el);
+            console.log('mounted end');
+        },
+        beforeUpdate:function () {
+            console.log('beforeUpdate start');
+            console.log(this.text);
+            console.log(this.$el);
+            console.log('beforeUpdate end');
+        },
+        updated:function () {
+            console.log('updated start');
+            console.log(this.text);
+            console.log(this.$el);
+            console.log('updated end');
+        },
+        beforeDestroy:function () {
+            console.log('beforeDestroy start');
+            console.log(this.text);
+            console.log(this.$el);
+            console.log('beforeDestroy end');
+        },
+        destroyed:function () {
+            console.log('destroyed start');
+            console.log(this.text);
+            console.log(this.$el);
+            console.log('destroyed end');
+        }
+    })
+</script>
+</body>
+</html>

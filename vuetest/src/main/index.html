@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Observer</title>
+</head>
+<body>
+<div id="app">
+    <p>{{text}}</p>
+    <input type="text" v-model="userName"/>
+    <div v-html="textHtml"></div>
+    <button v-on:click='clickBtn'>改变文本</button>
+</div>
+<script type="text/javascript" src="js/Observer.js"></script>
+<script type="text/javascript" src="js/Watcher.js"></script>
+<script type="text/javascript" src="js/Compile.js"></script>
+<script type="text/javascript" src="js/SimpleVue.js"></script>
+<script>
+    var vm = new SimpleVue({
+        el: '#app',
+        data: {
+            text: 'hello world',
+            userName: '',
+            textHtml: '<p style="border:1px solid black;">我是html代码</p>'
+        },
+        methods: {
+            clickBtn: function () {
+                this.text = '我被改变了';
+            }
+        }
+    })
+</script>
+</body>
+</html>
