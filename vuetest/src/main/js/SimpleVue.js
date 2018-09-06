@@ -7,7 +7,7 @@ function SimpleVue(opts) {
     });
     this._initComputed();
     observe(data, this);
-    this.$complie = new Complie(this.$options.el, this);
+    this.$complie = new Compile(this.$options.el, this);
 }
 
 SimpleVue.prototype = {
