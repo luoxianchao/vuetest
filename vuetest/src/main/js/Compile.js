@@ -84,7 +84,7 @@ var updater = {
 }
 
 //因为遍历过程中会涉及到多次的dom操作，为了避免产生的性能问题，这里会先将el转换成文档碎片fragment
-function Complie(el, vm) {
+function Compile(el, vm) {
     this.$vm = vm;
     this.$el = this.isElementNode(el) ? el : document.querySelector(el);
     if (this.$el) {
@@ -94,7 +94,7 @@ function Complie(el, vm) {
     }
 }
 
-Complie.prototype = {
+Compile.prototype = {
     init: function () {
         this.compileElement(this.$fragment)
     },
@@ -144,7 +144,7 @@ Complie.prototype = {
         })
     },
     compileText: function (node, exp) {
-        complieUtil.text(node, this.$vm, exp);
+        compileUtil.text(node, this.$vm, exp);
     },
     isDirective: function (attrName) {
         return attrName.indexOf('v-') === 0;
